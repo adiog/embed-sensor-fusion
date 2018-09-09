@@ -9,6 +9,6 @@
 namespace sensorFusion {
 struct FusionData
 {
-    glm::vec3 arrow;
+    glm::vec4 arrowWithRoll;
 };
 }

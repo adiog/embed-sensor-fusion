@@ -10,19 +10,19 @@
 namespace sensorFusion {
 struct SensorFusion
 {
-    using Float = double;
+    using Float = float;
 
     virtual void initialize(const SensorData &sensorData) = 0;
     virtual FusionData apply(const SensorData &sensorData) = 0;
 
     static Float getRoll(glm::vec3 accelerometer)
     {
-        return glm::degrees(atan2(accelerometer[1], accelerometer[2]));
+        return glm::degrees(atan2f(accelerometer[1], accelerometer[2]));
     }
 
     static Float getPitch(glm::vec3 accelerometer)
     {
-        return glm::degrees(atan(-accelerometer[0] / sqrt(accelerometer[1] * accelerometer[1] + accelerometer[2] * accelerometer[2])));
+        return glm::degrees(atanf(-accelerometer[0] / sqrtf(accelerometer[1] * accelerometer[1] + accelerometer[2] * accelerometer[2])));
     }
 
 };
