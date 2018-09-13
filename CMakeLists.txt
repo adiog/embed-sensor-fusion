@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.0)
 project(embed-sensor-fusion CXX)
 set(CMAKE_CXX_STANDARD 17)
 
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../glm)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/variant/imu-kalman)
 
